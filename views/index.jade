@@ -1,22 +1,52 @@
-!!!
-html(ng-app="myApp")
+// We want HTML5.
+!!! 5
+
+html(ng-app="myApp", lang="en")
 	head
+		// Lets set up our page a bit.
+		// ==========================================================================
 		title Angular Coffee Express
 		meta(http-equiv="Content-Type",content="text/html; charset=UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(name="description", content="A simple template with Angular JS running through Express with Connect-Assets and a focus on Coffee Script for scripting, stylus for templating, and Stylus for stylesheets.")
 		meta(name="author", content="Andrew Hobden")
+
 		// HTML5 shim, because IE's are horrible.
 		//if lt IE 9
 			script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
 			!= js("lib/angular-ui-0.2.0/angular-ui-ieshiv.min")
-
-		!= css("lib/angular-ui-0.2.0/angular-ui.min")
-		!= css("style")
-
-	body(ng-view)
-		p Loading the Application...
 		
+		// Include our Stylesheets. See /assets/css.
+		// ==========================================================================
+		!= css("lib/angular-ui-0.2.0/angular-ui.min")
+		!= css("lib/skeleton/skeleton")
+		!= css("lib/skeleton/base")
+		!= css("lib/skeleton/layout")
+		!= css("lib/skeleton/docs")
+		!= css("fonts")
+
+		// The content of our page.
+		// ==========================================================================
+		body
+			.container
+				.three.columns.sidebar
+					nav
+						h3#logo Angular Coffeee Express
+						ul
+							li
+								a(ng-href='/view1') View 1
+							li
+								a(ng-href='/view2') View 2
+				// Angular's views go in this div element.
+				// ==========================================================================
+				.twelve.columns.offset-by-one.content(ng-view)
+					// Loading Screen
+					// ========================================================================
+					p Loading the Application...
+		
+			
+	// Include our Scripts. See /assets/js.
+	// ============================================================================
 	// Load jQuery
 	!= js("lib/jquery.min")
 	// Load Angular
