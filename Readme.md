@@ -12,11 +12,11 @@ Everything else is bundled with the application itself, or pulled in via npm.
 ## Getting the Repository
 If you have git:
 
-    git clone https://github.com/BCAAFC/Gathering-Our-Voices.git
+    git clone https://github.com/Hoverbear/Angular-Coffee-Express.git
 
 Then lets nagivate into the repo:
 
-    cd Gathering-Our-Voices
+    cd Angular-Coffee-Express
 
 ## Pulling in Dependencies
 Since we're in the root directory of the repo, we can tell npm to install all of the neccessary dependencies.
