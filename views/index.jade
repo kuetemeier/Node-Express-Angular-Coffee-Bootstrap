@@ -1,0 +1,30 @@
+!!!
+html(ng-app="myApp")
+	head
+		title Angular Coffee Express
+		meta(http-equiv="Content-Type",content="text/html; charset=UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="A simple template with Angular JS running through Express with Connect-Assets and a focus on Coffee Script for scripting, stylus for templating, and Stylus for stylesheets.")
+		meta(name="author", content="Andrew Hobden")
+		// HTML5 shim, because IE's are horrible.
+		//if lt IE 9
+			script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+			!= js("lib/angular-ui-0.2.0/angular-ui-ieshiv.min")
+
+		!= css("lib/angular-ui-0.2.0/angular-ui.min")
+		!= css("style")
+
+	body(ng-view)
+		p Loading the Application...
+		
+	// Load jQuery
+	!= js("lib/jquery.min")
+	// Load Angular
+	!= js("lib/angular-1.0.1/angular-1.0.1.min")
+	!= js("lib/angular-ui-0.2.0/angular-ui.min")
+	// Load Angular Configuration
+	!= js("app")
+	!= js("controllers")
+	!= js("directives")
+	!= js("filters")
+	!= js("services")
