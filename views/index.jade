@@ -28,7 +28,9 @@ html(ng-app="myApp", lang="en")
 		// The content of our page.
 		// ==========================================================================
 		body
+			// Containers provide us with fluid layouts. If you resize the browser window, it follows!
 			.container
+				// A floating navbar, snazzy!
 				.three.columns.sidebar
 					nav
 						h3#logo Angular Coffeee Express
@@ -43,7 +45,12 @@ html(ng-app="myApp", lang="en")
 					// Loading Screen
 					// ========================================================================
 					p Loading the Application...
-		
+
+			// Demonstrating filters and services with a simple version example.
+			.container
+				.three.columns.offset-by-fourteen
+					App Version: v
+					span(app-version)
 			
 	// Include our Scripts. See /assets/js.
 	// ============================================================================
