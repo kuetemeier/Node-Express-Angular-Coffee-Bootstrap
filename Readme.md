@@ -5,7 +5,6 @@ Setup is a fairly straightforward task if you've ever used our particular blend 
 You will need the following set up:
 * node.js
 * git
-* mongo
 * npm
 
 Everything else is bundled with the application itself, or pulled in via npm.
@@ -37,8 +36,9 @@ Thankfully, it's easy to make your own!
 In `config.js`:
 
     module.exports = {
-      secret: $yourSecretHere,
-      cookieSecret: $yourCookieSecretHere
+		port: $yourPortHere,
+    	secret: $yourSecretHere,
+    	cookieSecret: $yourCookieSecretHere
     };
 
 ## Test it out
@@ -61,4 +61,3 @@ Thanks the contributors to the following Open Source Technologies:
 * git
 * linux
 * jade
-* mongo
