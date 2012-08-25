@@ -44,7 +44,7 @@ In `config.js`:
 ## Test it out
 Lets test our installation by executing `coffee app.coffee`
 
-    $> coffee app.coffee
+    $> coffee server.coffee
     Express server listening on port 8080
 
 ## Relax
