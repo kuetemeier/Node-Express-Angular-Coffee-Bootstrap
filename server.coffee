@@ -1,13 +1,14 @@
+
 ###
 	Requires
 ###
 express = require 'express'
 assets	= require 'connect-assets'
-path	= require 'path'
-http	= require 'http'
+path	  = require 'path'
+http	  = require 'http'
 coffee	= require 'coffee-script'
 
-config	= require './config'
+config	= require './server/config/server-config'
 
 ###
 	Declare & Configure the Server
@@ -22,7 +23,7 @@ server.configure ->
 	server.use express.logger("dev")
 	server.use express.bodyParser()
 	server.use express.methodOverride()
-	server.use assets()
+	server.use assets({src: path.join(__dirname, 'client', 'src')})
 	server.use express.cookieParser(config.cookieSecret)
 	server.use express.session()
 	server.use server.router
