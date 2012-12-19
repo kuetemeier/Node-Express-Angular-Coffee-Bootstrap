@@ -1,5 +1,5 @@
 {
-	"name": "Angular Coffee Express",
+	"name": "JK-Angular-Coffee-Express",
 	"description": "A simple template with Angular JS running through Express with Connect-Assets and a focus on Coffee Script for scripting, stylus for templating, and Stylus for stylesheets.",
 	"version": "0.0.1",
 	"private": true,
