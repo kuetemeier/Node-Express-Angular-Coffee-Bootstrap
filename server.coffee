@@ -40,6 +40,7 @@ server.configure ->
   server.set 'port', process.env.PORT or config.port
   server.set 'views', path.join(__dirname, 'server', '/views')
   server.set 'view engine', 'jade'
+  server.set 'view options', { layout: false, pretty: false }
   server.use express.favicon()
   server.use express.logger('dev')
   server.use express.bodyParser()
