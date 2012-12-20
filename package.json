@@ -1,8 +1,11 @@
 {
   "name": "Node-Express-Angular-Coffee-Bootstrap",
   "description": "A template with Angular JS running through Node.js Express with Connect-Assets and a focus on Coffee Script for scripting, Jade for templating, and Stylus for stylesheets.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "coffee server"
+  },
   "dependencies": {
     "express"         : "3.x",
     "coffee-script"   : "1.3.3",
