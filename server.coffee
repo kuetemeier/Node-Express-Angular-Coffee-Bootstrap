@@ -3,15 +3,33 @@
 ###
   Requires
 ###
-express = require 'express'
-assets  = require 'connect-assets'
-path    = require 'path'
-http    = require 'http'
-coffee  = require 'coffee-script'
-routes  = require './server/routes'
-user    = require './server/routes/user'
+express      = require 'express'
+assets       = require 'connect-assets'
+path         = require 'path'
+http         = require 'http'
+coffee       = require 'coffee-script'
+routes       = require './server/routes'
+user         = require './server/routes/user'
 
-config  = require './server/config/server-config'
+config       = require './server/config/server-config'
+errorHandler = require './server/src/errorHandler'
+
+###
+class errorHandler
+  defaultError = (err, req, res, next) ->
+    res.status 500
+    res.render 'error', { error: err }
+
+  logError = (err, req, res, next) ->
+    console.error err.stack
+    next err
+
+  xhrError = (err, req, res, next) ->
+    if (req.xhr)
+      res.send 500, { error: 'Something blew up!' }
+    else
+      next err
+###
 
 ###
   Declare & Configure the Server
@@ -30,9 +48,14 @@ server.configure ->
   server.use express.cookieParser(config.cookieSecret)
   server.use express.session()
   server.use server.router
-  # enable this if you have styl css files in your public folder
-  # server.use(require('stylus').middleware(path.join(__dirname, 'client', '/public')))
+  ###
+    # enable this if you have styl css files in your public folder
+    server.use(require('stylus').middleware(path.join(__dirname, 'client', '/public')))
+  ###
   server.use express.static(path.join(__dirname, 'client', 'public'))
+  server.use errorHandler.logError
+  server.use errorHandler.xhrError
+  server.use errorHandler.defaultError
 
 
 ###
@@ -40,6 +63,9 @@ server.configure ->
 ###
 server.get '/', (req, res) ->
   routes.index req, res
+
+server.get '/error', (req, res) ->
+  throw "Error - Fehler"
 
 server.get '/users', (req, res) ->
   user.list req, res
