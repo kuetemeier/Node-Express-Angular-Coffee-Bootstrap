@@ -30,8 +30,10 @@ server.configure ->
   server.use express.cookieParser(config.cookieSecret)
   server.use express.session()
   server.use server.router
-  # enable this if you have styl css files in your public folder
-  # server.use(require('stylus').middleware(path.join(__dirname, 'client', '/public')))
+  ###
+    # enable this if you have styl css files in your public folder
+    server.use(require('stylus').middleware(path.join(__dirname, 'client', '/public')))
+  ###
   server.use express.static(path.join(__dirname, 'client', 'public'))
 
 
