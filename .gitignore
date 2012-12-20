@@ -1,0 +1,32 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+.app.js.swo
+.DS_Store
+pids
+logs
+results
+
+node_modules
+npm-debug.log
+config.js
+
+######################################################
+# ignore IDEAs, we believe a user can setup his IDEA
+
+# IntelliJ IDEA
+.idea
+*.iml
+
+# VIM
+*~
+*.swp
+*.swo

@@ -1,0 +1,4 @@
+# Allow all agents and all locations
+
+User-agent: *
+Disallow:
