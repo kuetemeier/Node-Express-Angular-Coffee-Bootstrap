@@ -64,12 +64,12 @@ which saved me a lot of time. Thank you Andrew Hobden for doing a great job.
   > easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
 * Site: [http://daringfireball.net/projects/markdown](http://daringfireball.net/projects/markdown)
 * Doc: [http://daringfireball.net/projects/markdown/syntax](http://daringfireball.net/projects/markdown/syntax)
-* Licence: [BSD-Style](http://daringfireball.net/projects/markdown/license)
+* License: [BSD-Style](http://daringfireball.net/projects/markdown/license)
 
 ### stylus
-* Site: [http://learnboost.github.com/stylus/](http://learnboost.github.com/stylus/)
-* Doc:
+* Site &amps; Docs: [http://learnboost.github.com/stylus/](http://learnboost.github.com/stylus/)
 * GitHub: [https://github.com/learnboost/stylus](https://github.com/learnboost/stylus)
+* License: [MIT](https://github.com/LearnBoost/stylus/blob/master/LICENSE)
 
 ### ... and others
 
