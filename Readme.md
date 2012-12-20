@@ -51,21 +51,13 @@ Lets test our installation by executing `coffee app.coffee`
 You're done! Check back later for more exciting progress! Feel free to suggest improvements by opening an issue or submitting a pull request!
 
 # Thanks
-This Template ist based on (forked from) the Hoverbear/Angular-Coffee-Express, which was a great source and helped me a lot, thank you Andrew Hobden.
+This Template was initially based on (forked from) the [Hoverbear/Angular-Coffee-Express](https://github.com/Hoverbear/Angular-Coffee-Express),
+which saved me a lot of time. Thank you Andrew Hobden for doing a great job.
 
-Thanks the contributors to the following Open Source Technologies:
-* coffee-script
-* express
-* node.js
-* npm
-* angular.js
-* connect
-* git
-* linux
-* jade
+## Thanks the contributors to the following Open Source Technologies:
 
 ### Markdown
-* Project quote:
+* Summary:
 
   > Markdown is a text-to-HTML conversion tool for web writers.
   > Markdown allows you to write using an easy-to-read,
@@ -78,3 +70,17 @@ Thanks the contributors to the following Open Source Technologies:
 * Site: [http://learnboost.github.com/stylus/](http://learnboost.github.com/stylus/)
 * Doc:
 * GitHub: [https://github.com/learnboost/stylus](https://github.com/learnboost/stylus)
+
+### ... and others
+
+* coffee-script
+* jade
+* express
+* node.js
+* npm
+* angular.js
+* connect
+* git
+* linux
+
+etc.
