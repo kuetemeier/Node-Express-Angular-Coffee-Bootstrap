@@ -73,7 +73,19 @@ server.configure ->
         # default to plain-text. send()
         res.type('txt').send('Not found')
 
+###
+  specific server config for development environment
+###
+server.configure 'development', () ->
+  console.log('server running in development mode')
+  server.use ( express.errorHandler( { dumpExceptions: true, showStack: true } ) )
 
+###
+  specific server config for production environment
+###
+server.configure 'production', () ->
+  console.log('server running in production mode')
+  server.use ( express.errorHandler() )
 
 ###
   server.dynamicHelpers({
