@@ -14,27 +14,11 @@ user         = require './server/routes/user'
 config       = require './server/config/server-config'
 errorHandler = require './server/src/errorHandler'
 
-###
-class errorHandler
-  defaultError = (err, req, res, next) ->
-    res.status 500
-    res.render 'error', { error: err }
-
-  logError = (err, req, res, next) ->
-    console.error err.stack
-    next err
-
-  xhrError = (err, req, res, next) ->
-    if (req.xhr)
-      res.send 500, { error: 'Something blew up!' }
-    else
-      next err
-###
 
 ###
   Declare & Configure the Server
 ###
-server  = express()
+server  = module.exports = express()
 
 server.configure ->
   server.set 'port', process.env.PORT or config.port
@@ -48,15 +32,58 @@ server.configure ->
   server.use assets({src: path.join(__dirname, 'client', 'src')})
   server.use express.cookieParser(config.cookieSecret)
   server.use express.session()
-  server.use server.router
+
+  server.use errorHandler.notFound404
+  server.use errorHandler.logError
+  server.use errorHandler.xhrError
+  server.use errorHandler.defaultError
+
   ###
     # enable this if you have styl css files in your public folder
     server.use(require('stylus').middleware(path.join(__dirname, 'client', '/public')))
   ###
   server.use express.static(path.join(__dirname, 'client', 'public'))
-  server.use errorHandler.logError
-  server.use errorHandler.xhrError
-  server.use errorHandler.defaultError
+
+  ###
+    server.use (req, res) ->
+      language = req.session.language || "en"
+      res.locals.language = language
+      res.locals.title = "Huhu"
+      res.locals.translate = (clause) ->
+        translate(clause, language)
+  ###
+
+  server.locals({
+    title: 'Test Locals'
+  })
+
+  server.use server.router
+
+  server.use (req, res, next) ->
+    res.status(404)
+
+    # respond with html page
+    if (req.accepts('html'))
+      res.render('404-not-found', { url: req.url })
+    else
+      # respond with json
+      if (req.accepts('json'))
+        res.send({ error: 'Not found' })
+      else
+        # default to plain-text. send()
+        res.type('txt').send('Not found')
+
+
+
+###
+  server.dynamicHelpers({
+    session: (req, res) ->
+      req.session
+    ,title: "test"
+    ,language : (req, res) ->
+      req.session.language || "en"
+  })
+###
 
 
 ###

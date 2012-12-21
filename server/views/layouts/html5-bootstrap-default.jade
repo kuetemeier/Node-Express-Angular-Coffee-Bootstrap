@@ -1,0 +1,19 @@
+!!! 5
+html(lang="en")
+  mixin head-angular
+    //- nothing (but must be defined)
+
+  mixin head
+    //- nothing (but must be defined)
+
+  include ../includes/html5-head-and-body
+    block body
+      block content
+        p please insert bootstrap content
+
+    //- Include our Scripts.
+      ============================================================================
+    //- Load jQuery
+    != js("lib/jquery.min")
+    //- Load Bootstrap
+    != js("lib/bootstrap.min")

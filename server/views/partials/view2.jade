@@ -1,10 +1,14 @@
-header
-	h1 View 2
-hr.large
-.doc-secion.clearfix
-	input(ng-model='name')
-	p Hello {{ name }}, this is view 2.
-	
-	p
-		| Showing of 'interpolate' filter:
-		| {{ 'Current version is v%VERSION%.' | interpolate }}
+extends ../layouts/partial-with-sidebar-left
+
+block part-content
+  h2 View 2
+  hr
+
+  p Sitebar is on the left :-)
+
+  input(ng-model='name')
+  p Hello {{ name }}, this is view 2.
+
+  p
+    | Showing of 'interpolate' filter:
+    | {{ 'Current version is v%VERSION%.' | interpolate }}

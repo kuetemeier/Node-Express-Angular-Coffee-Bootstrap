@@ -1,0 +1,35 @@
+!!! 5
+html(ng-app="myApp", lang="en")
+  mixin head-angular
+    //- HTML5 shim, because IE's are horrible.
+      //if lt IE 9
+        script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+        != js("lib/angular-ui-0.2.0/angular-ui-ieshiv.min")
+    //- Include our Stylesheets. See /assets/css.
+      ==========================================================================
+    != css("lib/angular-ui-0.2.0/angular-ui.min")
+    != css("fonts")
+
+  mixin head
+    //- nothing (but must be defined)
+
+  include ../includes/html5-head-and-body
+    block body
+      block content
+        p please insert angular content
+
+    //- Include our Scripts.
+          ============================================================================
+    //- Load jQuery
+    != js("lib/jquery.min")
+    //- Load Bootstrap
+    != js("lib/bootstrap.min")
+    //- Load Angular
+    != js("lib/angular-1.0.3/angular.min")
+    != js("lib/angular-ui-0.2.0/angular-ui.min")
+    //- Load Angular Configuration
+    != js("app")
+    != js("controllers")
+    != js("directives")
+    != js("filters")
+    != js("services")

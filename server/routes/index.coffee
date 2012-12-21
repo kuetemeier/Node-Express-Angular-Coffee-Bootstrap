@@ -4,4 +4,4 @@
 ###
 
 exports.index = (req, res) ->
-  res.render 'index', { title: 'Express' }
+  res.render 'index', { title: 'Node Express Angular Coffee Bootstrap - Template' }

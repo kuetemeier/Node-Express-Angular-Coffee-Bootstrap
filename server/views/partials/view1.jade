@@ -1,4 +1,12 @@
-h2 View 1
+extends ../layouts/partial-with-sidebar-right
 
-input(ng-model='name')
-p Hello {{ name }}, this is view 1.
+block part-content
+  h2 View 1
+  hr
+
+  input(ng-model='name')
+  p Hello {{ name }}, this is view 1.
+
+  h2 Filter and Services
+  App Version: v
+  span(app-version)
