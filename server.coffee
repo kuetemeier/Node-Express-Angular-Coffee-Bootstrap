@@ -23,6 +23,8 @@ errorHandler   = require './server/src/errorHandler'
   passport authentication - part I
 ###
 
+user_guest = { id: -1, username: 'Guest', password: '', email: ''}
+
 users = [
   { id: 1, username: 'bob', password: 'secret', email: 'bob@example.com' }
 , { id: 2, username: 'joe', password: 'birthday', email: 'joe@example.com' }
@@ -88,30 +90,45 @@ passport.use(new LocalStrategy(
     )
 ))
 
-ensureUserMiddleWare = -> (req, res, next) ->
-  if (req?)
-    if (!req.user?)
-      req.user = {
-        username: 'Gast',
-        email: '',
-        password: '',
-        isAuthenticated: false
-      }
-    else
-      req.user.isAuthenticated = req.isAuthenticated()
-  next()
-
-
 ###
   Declare & Configure the Server
 ###
 server  = module.exports = express()
+
+localsHelper = -> (req, res, next) ->
+  if (req.isAuthenticated())
+    user = req.user
+  else
+    user = user_guest
+
+  user.isAuthenticated = req.isAuthenticated()
+  res.locals({ user: user })
+
+  language = req.session.language || "en"
+  res.locals ({ 'language': language })
+
+  res.locals ({ 'i18': (clause) ->
+    translate(clause, language)
+  })
+
+  next()
+
+
+###
+  'static' locals
+###
+server.locals({
+  config:   config
+  title:    'Node Express Angular Coffee Bootstrap - Template'
+  author:   'Joerg Kuetemeier (jkuetemeier@kuetemeier.net)'
+})
 
 server.configure ->
   server.set 'port', process.env.PORT or config.port
   server.set 'views', path.join(__dirname, 'server', '/views')
   server.set 'view engine', 'jade'
   server.set 'view options', { layout: false, pretty: false }
+
   server.use express.favicon()
   server.use express.logger('dev')
   server.use express.bodyParser()
@@ -123,7 +140,7 @@ server.configure ->
 
   server.use passport.initialize()
   server.use passport.session()
-  server.use ensureUserMiddleWare()
+  server.use localsHelper()
 
   server.use errorHandler.notFound404
   server.use errorHandler.logError
@@ -135,19 +152,6 @@ server.configure ->
     server.use(require('stylus').middleware(path.join(__dirname, 'client', '/public')))
   ###
   server.use express.static(path.join(__dirname, 'client', 'public'))
-
-  ###
-    server.use (req, res) ->
-      language = req.session.language || "en"
-      res.locals.language = language
-      res.locals.title = "Huhu"
-      res.locals.translate = (clause) ->
-        translate(clause, language)
-  ###
-
-  server.locals({
-    title: 'Test Locals'
-  })
 
   server.use server.router
 
@@ -179,16 +183,6 @@ server.configure 'production', () ->
   console.log 'server running in production mode'
   server.use express.errorHandler()
 
-###
-  server.dynamicHelpers({
-    session: (req, res) ->
-      req.session
-    ,title: "test"
-    ,language : (req, res) ->
-      req.session.language || "en"
-  })
-###
-
 
 ###
   Define routes
@@ -218,7 +212,7 @@ server.get ['/view1', '/view2'], (req, res) ->
 ###
 
 server.get '/login', (req, res) ->
-  res.render 'login', { user: req.user, message: req.flash('error') }
+  res.render 'login', { message: req.flash('error') }
 
 server.post '/login',
   passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res) ->
@@ -236,13 +230,13 @@ server.get '/logout', (req, res) ->
  login page.
 ###
 ensureAuthenticated = (req, res, next) ->
-  if (req.user.isAuthenticated)
+  if (res.locals.user.isAuthenticated)
     return next()
   res.redirect('/login')
 
 
 server.get '/account', ensureAuthenticated, (req, res) ->
-  res.render 'account', { user: req.user }
+  res.render 'account', {}
 
 
 

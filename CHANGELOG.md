@@ -1,8 +1,14 @@
 ### HEAD
 
+### 0.3.0 (22 December, 2012)
+
+* integrade passport authentication with local strategy
+* miscellaneous small changeds
+
 ### 0.2.0 (21 December, 2012)
 
 * integrade bootstrap und build deep jade templates
+* miscellaneous small changeds
 
 ### 0.1.0 (20 December, 2012)
 
