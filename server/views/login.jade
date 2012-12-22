@@ -1,0 +1,25 @@
+extends layouts/html5-bootstrap-default
+
+block content
+  .hero-unit
+
+    h1 Login
+
+  .container-fluid
+
+    - if (message) {
+    p= message
+    - }
+
+    form(action="/login", method="post")
+      div
+        div
+          label Username:
+          input(type="text", name="username")
+        div
+          label Password:
+          input(type="password", name="password")
+
+        input(type="submit", value="Submit")
+    p
+      small Hint - bob:secret
