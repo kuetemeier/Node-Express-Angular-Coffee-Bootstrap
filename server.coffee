@@ -218,7 +218,6 @@ server.get ['/view1', '/view2'], (req, res) ->
 ###
 
 server.get '/login', (req, res) ->
-  req.session.loginReferer = referer
   res.render 'login', { user: req.user, message: req.flash('error') }
 
 server.post '/login',
