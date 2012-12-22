@@ -7,9 +7,15 @@
         span.icon-bar
       a.brand(href="#") N-E-A-C-B Template
       .nav-collapse.collapse
-      p.navbar-text.pull-right
-        Logged in as
-          a.navbar-link(href="#") Username
+      - if (user.isAuthenticated) {
+        p.navbar-text.pull-right
+          | #{user.username} [&nbsp;
+          a.navbar-link(href="/login", target="_self") log in
+          | ]
+      - } else {
+      p.navbar-text.pull-right Logged in as&nbsp;
+        a.navbar-link(href="/account", target="_self") #{user.username}
+      - }
       ul.nav
         li.active
           a(ng-href='/') Home
