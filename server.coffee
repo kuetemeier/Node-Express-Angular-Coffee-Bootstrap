@@ -202,8 +202,11 @@ server.get '/partials/:name', (req, res) ->
   res.render 'partials/' + name
 
 # Views that are direct linkable
-server.get ['/view1', '/view2'], (req, res) ->
+server.get '/view1', (req, res) ->
   res.render 'index'
+
+server.get '/view2', (req, res) ->
+  res.render 'index' 
 
 
 
