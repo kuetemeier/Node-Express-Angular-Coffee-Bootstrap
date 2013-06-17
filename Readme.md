@@ -30,16 +30,17 @@ For convienence, you should also install `coffee-script` globally:
     sudo npm install -g coffee-script
 
 ## Make a config
-Due to security concerns, we don't include a configuration file, which contains all app-specific configuration details.
+Due to security concerns, you should edit the configuration file as fast as possible, which contains all app-specific configuration details.
 Thankfully, it's easy to make your own!
 
-In `config.js`:
+In `server/config/server-config.coffee`:
 
-    module.exports = {
-		port: $yourPortHere,
-    	secret: $yourSecretHere,
-    	cookieSecret: $yourCookieSecretHere
-    };
+module.exports =
+    port: 4000,
+    secret: 'test',
+    cookieSecret: 'test'
+
+Change 'test' to your own values.
 
 ## Test it out
 Lets test our installation by executing `coffee app.coffee`
