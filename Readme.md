@@ -57,7 +57,7 @@ This project is licensed under the MIT license. Feel free to use it in your own 
 
 # More informations
 
-1. [Version Information](docs/version-information.md)
+1. [Version Informations](docs/version-informations.md)
 2. [Debugging](docs/debugging.md)
 3. [Thanks goes to](docs/thanks-goes-to.md)
 
