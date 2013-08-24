@@ -5,4 +5,4 @@
 # Demonstrate how to register services
 # In this case it is a simple value service.
 angular.module("myApp.services", [])
-	.value "version", "0.3.0"
+    .value "version", "1.1.0"

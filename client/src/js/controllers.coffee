@@ -2,19 +2,19 @@
 
 # Controllers 
 @AppCtrl = ($scope, $http) ->
-  $http(
-    method: "GET"
-    url: "/api/name"
-  ).success((data, status, headers, config) ->
-    $scope.name = data.name
-  ).error (data, status, headers, config) ->
-    $scope.name = "Error!"
+    $http(
+        method: "GET"
+        url: "/api/name"
+    ).success((data, status, headers, config) ->
+        $scope.name = data.name
+    ).error (data, status, headers, config) ->
+        $scope.name = "Error!"
 
 @MyCtrl1 = ($scope, $http) ->
-	$scope.name = "World"
+    $scope.name = "World"
 MyCtrl1.$inject = ['$scope','$http']
 
 
 @MyCtrl2 = ($scope, $http) ->
-	$scope.name = "Bear"
+    $scope.name = "Bear"
 MyCtrl2.$inject = ['$scope','$http']
