@@ -4,10 +4,11 @@ All versions of the node modules can be found in the [package.json](/package.jso
 
 # Included modules
 
-- Angular v1.0.3
+- Angular v1.0.7
 - Angular-ui v0.2.0
 - Bootstrap v2.3.2
-- jQuery v1.8.3
+- jQuery v1.10.2
+- NG-Grid v2.0.7
 
 # Notes
 

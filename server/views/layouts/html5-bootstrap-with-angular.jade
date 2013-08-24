@@ -8,6 +8,7 @@ html(ng-app="myApp", lang="en")
     //- Include our Stylesheets. See /assets/css.
     //- ==========================================================================
     != css("lib/angular-ui-0.2.0/angular-ui.min")
+    != css("lib/ng-grid.min")
     != css("fonts")
 
   mixin head
@@ -21,12 +22,13 @@ html(ng-app="myApp", lang="en")
     //- Include our Scripts.
     //- ============================================================================
     //- Load jQuery
-    != js("lib/jquery.min")
+    != js("lib/jquery-1.10.2.min")
     //- Load Bootstrap
     != js("lib/bootstrap.min")
     //- Load Angular
-    != js("lib/angular-1.0.3/angular.min")
+    != js("lib/angular-1.0.7.min")
     != js("lib/angular-ui-0.2.0/angular-ui.min")
+    != js("lib/ng-grid-2.0.7.min")
     //- Load Angular Configuration
     != js("app")
     != js("controllers")

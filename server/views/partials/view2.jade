@@ -1,14 +1,14 @@
 extends ../layouts/partial-with-sidebar-left
 
 block part-content
-  h2 View 2
-  hr
+    h2 View 2
+    hr
 
-  p Sitebar is on the left :-)
+    p Sitebar is on the left :-)
 
-  input(ng-model='name')
-  p Hello {{ name }}, this is view 2.
+    input(ng-model='name')
+    p Hello {{ name }}, this is view 2.
 
-  p
-    | Showing of 'interpolate' filter:
-    | {{ 'Current version is v%VERSION%.' | interpolate }}
+    p
+        | Showing of 'interpolate' filter:
+        | {{ 'Current version is v%VERSION%.' | interpolate }}

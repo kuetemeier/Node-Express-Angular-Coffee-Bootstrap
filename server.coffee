@@ -208,6 +208,8 @@ server.get '/view1', (req, res) ->
 server.get '/view2', (req, res) ->
   res.render 'index' 
 
+server.get '/ng-grid', (req, res) ->
+  res.render 'index' 
 
 
 ###

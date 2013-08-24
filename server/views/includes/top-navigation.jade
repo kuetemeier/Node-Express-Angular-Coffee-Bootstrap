@@ -1,25 +1,28 @@
+
 .navbar.navbar-inverse.navbar-fixed-top
-  .navbar-inner
-    .container-fluid
-      a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.brand(href="#") N-E-A-C-B Template
-      .nav-collapse.collapse
-        - if (!user.isAuthenticated) {
-          p.navbar-text.pull-right
-            | #{user.username} [&nbsp;
-            a.navbar-link(href="/login", target="_self") log in
-            | ]
-        - } else {
-          p.navbar-text.pull-right Logged in as&nbsp;
-            a.navbar-link(href="/account", target="_self") #{user.username}
-        - }
-      ul.nav
-        li.active
-          a(ng-href='/') Home
-        li
-          a(ng-href='/view1') View 1
-        li
-          a(ng-href='/view2') View 2
+    .navbar-inner
+        .container-fluid
+            a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.brand(href="#") N-E-A-C-B Template
+            .nav-collapse.collapse
+                - if (!user.isAuthenticated) {
+                    p.navbar-text.pull-right
+                        | #{user.username} [&nbsp;
+                        a.navbar-link(href="/login", target="_self") log in
+                        | ]
+                - } else {
+                    p.navbar-text.pull-right Logged in as&nbsp;
+                        a.navbar-link(href="/account", target="_self") #{user.username}
+                - }
+            ul.nav
+                li.active
+                    a(ng-href='/') Home
+                li
+                    a(ng-href='/view1') View 1
+                li
+                    a(ng-href='/view2') View 2
+                li
+                    a(ng-href='/ng-grid') NG-Grid
