@@ -3,9 +3,10 @@
 This Template was initially based on (forked from) the [Hoverbear/Angular-Coffee-Express](https://github.com/Hoverbear/Angular-Coffee-Express),
 which saved me a lot of time. Thank you Andrew Hobden for doing a great job.
 
-## Thanks the contributors to the following Open Source Technologies:
+My thanks goes to the contributors of the following Open Source Technologies:
 
 ### Markdown
+
 * Summary:
 
   > Markdown is a text-to-HTML conversion tool for web writers.
@@ -16,6 +17,7 @@ which saved me a lot of time. Thank you Andrew Hobden for doing a great job.
 * License: [BSD-Style](http://daringfireball.net/projects/markdown/license)
 
 ### stylus
+
 * Site &amps; Docs: http://learnboost.github.com/stylus/
 * GitHub: https://github.com/learnboost/stylus
 * License: [MIT](https://github.com/LearnBoost/stylus/blob/master/LICENSE)

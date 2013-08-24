@@ -11,6 +11,6 @@ All versions of the node modules can be found in the [package.json](/package.jso
 
 # Notes
 
-## jQuery
+### jQuery
 
-We still user jQuery 1.x.x for Internet Explorer 6,7,7 compatibility. May be changed in the future.
+We still user jQuery 1.x.x for Internet Explorer 6, 7, 8 compatibility. May be changed in the future.
