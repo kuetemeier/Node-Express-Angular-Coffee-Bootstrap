@@ -6,7 +6,7 @@ All versions of the node modules can be found in the [package.json](/package.jso
 
 - Angular v1.0.3
 - Angular-ui v0.2.0
-- Bootstrap v2.2.2
+- Bootstrap v2.3.2
 - jQuery v1.8.3
 
 # Notes
