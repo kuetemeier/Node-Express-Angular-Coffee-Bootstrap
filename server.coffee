@@ -142,16 +142,16 @@ server.configure ->
   server.use passport.session()
   server.use localsHelper()
 
-  server.use errorHandler.notFound404
-  server.use errorHandler.logError
-  server.use errorHandler.xhrError
-  server.use errorHandler.defaultError
-
   ###
     # enable this if you have styl css files in your public folder
     server.use(require('stylus').middleware(path.join(__dirname, 'client', '/public')))
   ###
   server.use express.static(path.join(__dirname, 'client', 'public'))
+
+  server.use errorHandler.notFound404
+  server.use errorHandler.logError
+  server.use errorHandler.xhrError
+  server.use errorHandler.defaultError
 
   server.use server.router
 
