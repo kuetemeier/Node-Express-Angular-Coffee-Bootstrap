@@ -1,3 +1,11 @@
+# WARNING
+
+This Repo is discontinued by me, because I now use [Yeoman](http://yeoman.io/) and [LoopBack](http://loopback.io/).
+
+I am also working on a Yeoman generator for Angular, LoopBack and Bootstrap. You can find it [here](https://github.com/jkuetemeier/generator-loopback-angular-bootstrap)
+
+If you want to continue this special template, feel free to fork it.
+
 # Setting up
 Setup is a fairly straightforward task if you've ever used our particular blend of technologies before. If you haven't, you're in for a treat hopefully!
 
