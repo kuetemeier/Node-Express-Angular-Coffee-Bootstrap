@@ -1,3 +1,7 @@
+## Archived
+
+This project is archived and only stays here for your personal reference. Enjoy :-)
+
 # WARNING
 
 This Repo is discontinued by me, because I now use [Yeoman](http://yeoman.io/) and [LoopBack](http://loopback.io/).
